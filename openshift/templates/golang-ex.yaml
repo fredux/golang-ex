@@ -1,14 +1,27 @@
+apiVersion: template.openshift.io/v1
 kind: Template
-apiVersion: v1
-metadata:
-  name: beego-example
-  annotations:
-    description: An example Beego (http://beego.me/) application written in Golang
-    tags: quickstart,golang
-    iconClass: icon-go-gopher
 labels:
   template: beego-example
-  app: beego-example
+  application: beego-example
+message: |-
+  Projeto criado como exemplo para o móduo de Plataforma como Serviço(PaaS) da Faculdade Senai Fatesg.
+  Podemo utilizar os nomes das variáveis passadas como parâmetro : ${FACULDADE}.
+metadata:
+  name: fatesg-spa
+  annotations:
+    description: |-
+      Template genérico para uma aplicação Web. Para mais informações sobre este template, incluindo considerações do OpenShift, por favor acesso o link
+      https://dominio/openshift/templates/blob/master/README.md.
+
+      AVISO: Este template não trabalha como dados persistentes.
+    iconClass: icon-go-gopher
+    tags: quickstart,golang,fatesg
+    openshift.io/display-name: Example de aplicação GoLang para deploy
+    openshift.io/documentation-url: https://github.com/fredux/golang-ex
+    openshift.io/long-description: Este template foi criado na disciplina de Plataforma como Serviço
+    openshift.io/provider-display-name: Faculdade Senai Fatesg
+    openshift.io/support-url: https://senaigo.com.br
+
 objects:
   - kind: Service
     apiVersion: v1
